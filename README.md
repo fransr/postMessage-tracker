@@ -2,7 +2,7 @@
 
 Made by [Frans Rosén](https://twitter.com/fransrosen). Presented during the ["Attacking modern web technologies"-talk](https://www.youtube.com/watch?v=oJCCOnF25JU) ([Slides](https://speakerdeck.com/fransrosen/owasp-appseceu-2018-attacking-modern-web-technologies)) at OWASP AppSec Europe back in 2018, but finally released in May 2020.
 
-<img src="images/listener-uber.png" width="500" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/listener-uber.png" width="500" />
 
 This Chrome extension monitors postMessage-listeners by showing you an indicator about the amount of listeners in the current window.
 
@@ -10,7 +10,7 @@ It supports tracking listeners in all subframes of the window. It also keeps tra
 
 It also shows you the interaction between windows inside the console and will specify the windows using a path you can use yourself to replay the message:
 
-<img src="images/console.png" width="350" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/console.png" width="350" />
 
 It also supports tracking communication happening between different windows, using `diffwin` as sender or receiver in the console.
 
@@ -30,19 +30,19 @@ It also supports tracking communication happening between different windows, usi
 
 **Before using jQuery:**
 
-<img src="images/before-jquery.png" width="200" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/before-jquery.png" width="200" />
 
 **After, with postMessage-tracker:**
 
-<img src="images/after-jquery.png" width="200" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/after-jquery.png" width="200" />
 
 * Allows you to set a Log URL inside the extension options to allow you to log all information about each listener to an endpoint by submitting the listener and the function (to be able to look through all listeners later). You can find the options in the Extension Options when clicking the extension in `chrome://extensions`-page:
 
-<img src="images/options.png" width="300" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/options.png" width="300" />
 
 * Supports anonymous functions. Chrome does not support to stringify an anonymous function, in the cases of anonymous functions, you will see the `bound`-string as the listener:
 
-<img src="images/anonymous.png" width="300" />
+<img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/anonymous.png" width="300" />
 
 
 # Known issues
