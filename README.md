@@ -20,7 +20,7 @@ It also supports tracking communication happening between different windows, usi
 
 * Tries to bypass and reroute wrappers so the Devtools console will show the proper listeners:
 
-**Before using New Relic:**
+**Using New Relic:**
 
 <img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/before.png" width="200" />
 
@@ -28,7 +28,7 @@ It also supports tracking communication happening between different windows, usi
 
 <img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/after.png" width="200" />
 
-**Before using jQuery:**
+**Using jQuery:**
 
 <img src="https://github.com/fransr/postMessage-tracker/raw/docs-images/images/before-jquery.png" width="200" />
 
