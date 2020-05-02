@@ -104,11 +104,11 @@ var injectedJS = function(pushstate, addeventlistener) {
 	});
 	var c = function(listener) {
 		var listener_str = listener.toString()
-		if(listener_str.match(/\.deep.*apply.*captureException/)) return 'raven';
-		else if(listener_str.match(/arguments.*(start|typeof).*err.*finally.*end/) && listener["nr@original"] && typeof listener["nr@original"] == "function") return 'newrelic';
-		else if(listener_str.match(/rollbarContext.*rollbarWrappedError/) && listener._isWrap && 
+		if(listener_str.match(/\.deep.*apply.*captureException/s)) return 'raven';
+		else if(listener_str.match(/arguments.*(start|typeof).*err.*finally.*end/s) && listener["nr@original"] && typeof listener["nr@original"] == "function") return 'newrelic';
+		else if(listener_str.match(/rollbarContext.*rollbarWrappedError/s) && listener._isWrap && 
 					(typeof listener._wrapped == "function" || typeof listener._rollbar_wrapped == "function")) return 'rollbar';
-		else if(listener_str.match(/autoNotify.*(unhandledException|notifyException)/) && typeof listener.bugsnag == "function") return 'bugsnag';
+		else if(listener_str.match(/autoNotify.*(unhandledException|notifyException)/s) && typeof listener.bugsnag == "function") return 'bugsnag';
 		return false;
 	}
 
