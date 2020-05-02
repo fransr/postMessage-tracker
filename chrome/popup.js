@@ -5,9 +5,6 @@ chrome.runtime.getBackgroundPage(function (page) {
 	});
 });
 
-window.onload = loaded
-//addEventListener('DOMContentLoaded', loaded);
-
 function listListeners(listeners) {
 	var x = document.getElementById('x');
 	x.parentElement.removeChild(x);
