@@ -89,9 +89,3 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 	selectedId = tabs[0].id;
 	refreshCount();
 });
-
-chrome.extension.onConnect.addListener(function(port) {
-	port.onMessage.addListener(function(msg) {
-		port.postMessage({listeners:tab_listeners});
-	});
-})

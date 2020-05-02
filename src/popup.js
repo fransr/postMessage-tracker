@@ -1,21 +1,9 @@
-var port = chrome.extension.connect({
-	name: "Sample Communication"
-});
-
-
-function loaded() {
-	port.postMessage("get-stuff");
-	port.onMessage.addListener(function(msg) {
-		console.log("message recieved yea: ", msg);
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			selectedId = tabs[0].id;
-			listListeners(msg.listeners[selectedId]);
-		});
+chrome.runtime.getBackgroundPage(function (page) {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		selectedId = tabs[0].id;
+		listListeners(page.tab_listeners[selectedId]);
 	});
-}
-
-window.onload = loaded
-//addEventListener('DOMContentLoaded', loaded);
+});
 
 function listListeners(listeners) {
 	var x = document.getElementById('x');
