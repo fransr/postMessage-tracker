@@ -4,6 +4,7 @@ var selectedId = -1;
 
 function refreshCount() {
 	txt = tab_listeners[selectedId] ? tab_listeners[selectedId].length : 0;
+
 	chrome.tabs.get(selectedId, function() {
 		if (!chrome.runtime.lastError) {
 			chrome.browserAction.setBadgeText({"text": ''+txt, tabId: selectedId});
