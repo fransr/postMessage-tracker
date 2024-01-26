@@ -11,6 +11,10 @@ var injectedJS = function(pushstate, msgeventlistener, msgporteventlistener) {
 	var loaded = false;
     var originalFunctionToString = Function.prototype.toString;
 	var m = function(detail) {
+		// ignore chrome extensions
+		if('stack' in detail && detail.stack.includes("chrome-extension://")){
+			return
+		}
 		var storeEvent = new CustomEvent('postMessageTracker', {'detail':detail});
 		document.dispatchEvent(storeEvent);
 	};
